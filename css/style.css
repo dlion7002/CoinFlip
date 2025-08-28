@@ -48,8 +48,31 @@ body {
     margin-top: 2rem;
 }
 
-.btn {
-    display: inline-flex;
+.container {
+    border: 2px solid;
+
+    min-height: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.btn {
+    /* Layout & size */
+    display: inline-flex;
     justify-content: center; 
+
+    /* Styling */
+    color: white; 
+    background-color: #1F6FB0;
+    font-size: 16px; 
+    border-radius: 0.25rem; /* How round is the border*/
+    font-family: "Kanit", sans-serif;
+    border: none;
+}
+
+.author-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
