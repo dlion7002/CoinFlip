@@ -8,7 +8,7 @@
 
   /* Typography */
   --font-family: "Kanit", sans-serif;
-  --title-size: 4rem;
+  --title-size: clamp(2rem, 10vw + 0.5rem, 4rem);
   --text-size: 1.5rem;
   --button-size: 1.25rem;
 
@@ -33,7 +33,7 @@ main {
   flex-direction: column;
   align-items: center;       /* horizontally center children */
   gap: var(--gap);           /* consistent spacing between children */
-  padding: clamp(16px, 3vw, 32px);
+  padding: clamp(17px, 3vw, 32px);
 }
 
 .title {
@@ -45,18 +45,17 @@ main {
     line-height: 1.1;
     margin: 2rem 0;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 0px var(--text-stroke);
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: var(--text-stroke);
-    /* Fallback for browsers that don't support text-stroke */
-    filter: drop-shadow(1px 1px 0px var(--text-stroke)) 
-            drop-shadow(-1px -1px 0px var(--text-stroke)) 
-            drop-shadow(1px -1px 0px var(--text-stroke)) 
-            drop-shadow(-1px 1px 0px var(--text-stroke))
-            drop-shadow(2px 0px 0px var(--text-stroke))
-            drop-shadow(-2px 0px 0px var(--text-stroke))
-            drop-shadow(0px 2px 0px var(--text-stroke))
-            drop-shadow(0px -2px 0px var(--text-stroke));
+    text-shadow: 3px 3px 0px var(--text-stroke);
+    filter: drop-shadow(2px 2px 0px var(--text-stroke)) 
+            drop-shadow(-2px -2px 0px var(--text-stroke)) 
+            drop-shadow(2px -2px 0px var(--text-stroke)) 
+            drop-shadow(-2px 2px 0px var(--text-stroke))
+            drop-shadow(3px 0px 0px var(--text-stroke))
+            drop-shadow(-3px 0px 0px var(--text-stroke))
+            drop-shadow(0px 3px 0px var(--text-stroke))
+            drop-shadow(0px -3px 0px var(--text-stroke));
+
+    margin-bottom: -0.2rem;
 }
 
 .text {
@@ -70,17 +69,17 @@ main {
 
 /* Coin Image and functionality */
 .coin {
-    margin-top: 4rem; 
+    margin-top: 2rem; 
 }
 
 @keyframes flip {
   0%   { transform: rotateY(0deg); }
-  50%  { transform: rotateY(1800deg); }
-  100% { transform: rotateY(3600deg); }
+  50%  { transform: rotateY(1440deg); }
+  100% { transform: rotateY(2880deg); }
 }
 
 .coin.flip-animation {
-  animation: flip 2s ease-in-out;
+  animation: flip 1.5s ease-in-out;
   transform-style: preserve-3d;
 }
 
@@ -112,8 +111,20 @@ main {
     box-shadow: 0px 6px 0px var(--accent-shadow); /* x-offset | y-offset | blur | color */
 }
 
+.btn:hover {
+  transform: scale(1.02); /* Slight zoom */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.95); /* Shrink on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+}
+
+/* About me */
 .footer {
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
     opacity: 0.9;
 }
