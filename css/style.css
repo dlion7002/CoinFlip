@@ -1,3 +1,23 @@
+:root {
+  /* Colors */
+  --background-color: #404A65;
+  --text-color: white;
+  --accent-color: #1F6FB0;
+  --accent-shadow: #155a8c;
+  --text-stroke: #35383f;
+
+  /* Typography */
+  --font-family: "Kanit", sans-serif;
+  --title-size: 4rem;
+  --text-size: 1.5rem;
+  --button-size: 1.25rem;
+
+  /* Spacing */
+  --gap: 1rem;
+  --padding-main: clamp(16px, 3vw, 32px);
+  --margin-title: 2rem 0;
+}
+
 html, body { height: 100%; }
 
 /* Flexbox page layout */
@@ -6,7 +26,7 @@ body {
   min-height: 100dvh;        /* body at leas as tall as screen, better than 100vh on mobile */
   display: flex;
   flex-direction: column;
-  background-color: #404A65;
+  background-color: var(--background-color)
 }
 
 main {
