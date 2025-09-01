@@ -68,14 +68,27 @@ main {
     margin: 0.25rem 0; /* Top: 0.25rem, Bottom: 0.25rem, Left: 0, Right: 0, “line spacing” of the whole page*/
 }
 
+/* Coin Image and functionality */
 .coin {
     margin-top: 4rem; 
+}
+
+@keyframes flip {
+  0%   { transform: rotateY(0deg); }
+  50%  { transform: rotateY(1800deg); }
+  100% { transform: rotateY(3600deg); }
+}
+
+.coin.flip-animation {
+  animation: flip 2s ease-in-out;
+  transform-style: preserve-3d;
 }
 
 .shadow {
     margin-top: 2rem;
 }
 
+/* Button and actions */
 .container {
     min-height: 4rem;
     display: flex;
