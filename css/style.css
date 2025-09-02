@@ -108,12 +108,12 @@ main {
     font-family: var(--font-family);
     border: none;
     box-shadow: 0px 6px 0px var(--accent-shadow); /* x-offset | y-offset | blur | color */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
   transform: scale(1.02); /* Slight zoom */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:active {

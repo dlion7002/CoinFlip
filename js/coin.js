@@ -1,3 +1,8 @@
+["./assets/resources/heads.svg", "./assets/resources/tails.svg"].forEach(src => {
+  const i = new Image();
+  i.src = src; // triggers fetch + puts it in the HTTP cache
+});
+
 const button = document.querySelector(".btn");
 const image = document.getElementById("coinImg");
 
@@ -20,6 +25,6 @@ button.addEventListener("click", () => {
     button.disabled = false;  
   }
   
-  image.addEventListener("animationend", onEnd);
+  image.addEventListener("animationend", onEnd, { once: true });
 
 });
